@@ -51,7 +51,8 @@ let gotoIndex = () => {
 }
 
 if (geo_cmuitaccount) {
-    console.log(paper_id);
+    // console.log(paper_id);
+    document.getElementById("filename").innerHTML = paper_id
     // document.getElementById("profile").innerHTML += ` <li class=" dropdown" > <a class="active" href="#" onclick="gotoProfile()"> <i class="bx bxs-user-detail"></i> <span class="ff-noto">${firstname_TH}</span> <i class="bi bi-chevron-down"> </i> </a> 
     //     <ul>
     //         <li><a href="#"><span class="ff-noto">โปรไฟล์</span> </a></li>

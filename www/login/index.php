@@ -71,10 +71,10 @@
             setcookie("geo_organization_name_TH", $organization_name_TH, $expire, "/");
             // header('Location: ./../../download/index.html?paper_id='.$paper_id);
             // print($paper_id);
-            if($paper_id==null){
+            if($paper_id != null){
                 header('Location: ./../../download/index.html?paper_id='.$paper_id);
             }else{
-                header('Location: ./../index.php');
+                header('Location: ./../index.html');
             }
         }else{
             echo "not allowed";
