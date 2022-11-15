@@ -88,3 +88,16 @@ $("#warning").click(function () {
 $("#download_data").show()
 $("#history_data").hide()
 $("#warning_data").hide()
+
+
+document.getElementById("btndownload").innerHTML = `<button type="button" class="button primary Sarabun" disabled>ดาวน์โหลด</button>`
+function showButton() {
+    var chk = document.querySelector('#chk');
+    // console.log(chk.checked)
+    document.getElementById("btndownload").innerHTML = ""
+    if (chk.checked == true) {
+        document.getElementById("btndownload").innerHTML = `<button type="button" class="button primary Sarabun">ดาวน์โหลด</button>`
+    } else {
+        document.getElementById("btndownload").innerHTML = `<button type="button" class="button primary Sarabun" disabled>ดาวน์โหลด</button>`
+    }
+}
