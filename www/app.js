@@ -26,10 +26,10 @@ let refreshPage = () => {
 
 let gotoLogin = () => {
     let url = 'https://oauth.cmu.ac.th/v1/Authorize.aspx?response_type=code' +
-        '&client_id=JDxvGSrJv9RbXrxGQAsj0x4wKtm3hedf2qw3Cr2s' +
-        '&redirect_uri=http://localhost:3000/login/' +
+        '&client_id=vfue5sa0rvFkqkxQyj3KEjjqhrVrphFQBd2Mf0Nz' +
+        '&redirect_uri=http://localhost/login/index.php' +
         '&scope=cmuitaccount.basicinfo' +
-        '&state=dashboard'
+        '&state=download'
     window.location.href = url;
 }
 
@@ -41,15 +41,6 @@ let gotoLogout = () => {
     document.cookie = "open_organization_name_TH=; max-age=0; path=/;";
     gotoIndex()
 }
-
-const loginPopup = () => {
-    let url = 'https://oauth.cmu.ac.th/v1/Authorize.aspx?response_type=code' +
-        '&client_id=JDxvGSrJv9RbXrxGQAsj0x4wKtm3hedf2qw3Cr2s' +
-        '&redirect_uri=http://localhost:3000/login/' +
-        '&scope=cmuitaccount.basicinfo' +
-        '&state=dashboard'
-    window.location.href = url;
-};
 
 let gotoIndex = () => {
     location.href = "./index.html";
