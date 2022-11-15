@@ -55,20 +55,21 @@
         $response = curl_exec($curl);    
         
         if($response){
+            $paper_id = $_GET['state'];
             $data = json_decode($response);
             $student_id = $data->student_id;
             $cmuitaccount = $data->cmuitaccount;
             $firstname_TH = $data->firstname_TH;
             $lastname_TH = $data->lastname_TH;
             $organization_name_TH = $data->organization_name_TH;
-            print($student_id);
+            // print($student_id);
             $expire = time() + (60 * 1); // 1 hour
             setcookie("geo_student_id", $student_id, $expire, "/");
             setcookie("geo_cmuitaccount", $cmuitaccount, $expire, "/");
             setcookie("geo_firstname_TH", $firstname_TH, $expire, "/");
             setcookie("geo_lastname_TH", $lastname_TH, $expire, "/");
             setcookie("geo_organization_name_TH", $organization_name_TH, $expire, "/");
-            header('Location: ./../../download/');
+            header('Location: ./../../download/index.html?paper_id='.$paper_id);
         }else{
             echo "not allowed";
         }
