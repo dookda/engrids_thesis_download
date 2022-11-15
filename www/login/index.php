@@ -63,13 +63,19 @@
             $lastname_TH = $data->lastname_TH;
             $organization_name_TH = $data->organization_name_TH;
             // print($student_id);
-            $expire = time() + (3600 * 1); // 1 hour
+            $expire = time() + (60 * 1); // 1 hour
             setcookie("geo_student_id", $student_id, $expire, "/");
             setcookie("geo_cmuitaccount", $cmuitaccount, $expire, "/");
             setcookie("geo_firstname_TH", $firstname_TH, $expire, "/");
             setcookie("geo_lastname_TH", $lastname_TH, $expire, "/");
             setcookie("geo_organization_name_TH", $organization_name_TH, $expire, "/");
-            header('Location: ./../../download/index.html?paper_id='.$paper_id);
+            // header('Location: ./../../download/index.html?paper_id='.$paper_id);
+            // print($paper_id);
+            if($paper_id==null){
+                header('Location: ./../../download/index.html?paper_id='.$paper_id);
+            }else{
+                header('Location: ./../index.php');
+            }
         }else{
             echo "not allowed";
         }
