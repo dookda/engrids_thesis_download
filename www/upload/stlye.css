@@ -59,3 +59,19 @@ body {
 a:hover {
     cursor: pointer;
 }
+
+input[type=file]::file-selector-button {
+    margin-right: 20px;
+    border: 1px solid #a7a7a7;
+    background: #ffffff;
+    padding: 8px 8px;
+    border-radius: 10px;
+    color: #1d1d1d;
+    cursor: pointer;
+    font-size: 20px;
+    /* transition: background .2s ease-in-out; */
+}
+
+/* input[type=file]::file-selector-button:hover {
+    background: #0d45a5;
+} */
