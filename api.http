@@ -1,1 +1,22 @@
 GET http://localhost/api/getthesis.php
+
+###
+POST http://localhost/api/getdetail.php
+content-type: application/json
+
+{
+    "paper_id": "3604018"
+}
+
+###
+POST http://localhost/api/updatehistory.php
+content-type: application/json
+
+{
+    "geo_student_id": "",
+    "geo_cmuitaccount": "sakda.homhuan@cmu.ac.th",
+    "geo_firstname_TH": "ศักดิ์ดา",
+    "geo_lastname_TH": "หอมหวล",
+    "geo_organization_name_TH": "คณะสังคมศาสตร์",
+    "paper_id": "3604003"
+}

@@ -63,7 +63,7 @@
             $lastname_TH = $data->lastname_TH;
             $organization_name_TH = $data->organization_name_TH;
             // print($student_id);
-            $expire = time() + (60 * 1); // 1 hour
+            $expire = time() + (60 * 5); // 1 hour
             setcookie("geo_student_id", $student_id, $expire, "/");
             setcookie("geo_cmuitaccount", $cmuitaccount, $expire, "/");
             setcookie("geo_firstname_TH", $firstname_TH, $expire, "/");

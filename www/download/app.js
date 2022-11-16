@@ -24,6 +24,19 @@ const geo_firstname_TH = getCookie("geo_firstname_TH");
 const geo_lastname_TH = getCookie("geo_lastname_TH");
 const geo_organization_name_TH = getCookie("geo_organization_name_TH");
 
+let updateHistory = (thesis_id) => {
+    let data = {
+        geo_student_id,
+        geo_cmuitaccount,
+        geo_firstname_TH,
+        geo_lastname_TH,
+        geo_organization_name_TH,
+        paper_id
+    }
+    // console.log(data);
+    axios.post('./../api/updatehistory.php', data).then(r => console.log(r))
+}
+
 let refreshPage = () => {
     location.reload(true);
 }
@@ -38,36 +51,31 @@ let gotoLogin = () => {
 }
 
 let gotoLogout = () => {
-    document.cookie = "open_code=; max-age=0; path=/;";
-    document.cookie = "open_firstname_TH=; max-age=0; path=/;";
-    document.cookie = "open_lastname_TH=; max-age=0; path=/;";
-    document.cookie = "open_student_id=; max-age=0; path=/;";
-    document.cookie = "open_organization_name_TH=; max-age=0; path=/;";
+    document.cookie = "geo_student_id=; max-age=0; path=/;";
+    document.cookie = "geo_cmuitaccount=; max-age=0; path=/;";
+    document.cookie = "geo_firstname_TH=; max-age=0; path=/;";
+    document.cookie = "geo_lastname_TH=; max-age=0; path=/;";
+    document.cookie = "geo_organization_name_TH=; max-age=0; path=/;";
     gotoIndex()
 }
 
 let gotoIndex = () => {
-    location.href = "./index.html";
+    location.href = "./../index.html";
 }
 
 if (geo_cmuitaccount) {
-    // console.log(paper_id);
     document.getElementById("filename").innerHTML = paper_id
-    // document.getElementById("profile").innerHTML += ` <li class=" dropdown" > <a class="active" href="#" onclick="gotoProfile()"> <i class="bx bxs-user-detail"></i> <span class="ff-noto">${firstname_TH}</span> <i class="bi bi-chevron-down"> </i> </a> 
-    //     <ul>
-    //         <li><a href="#"><span class="ff-noto">โปรไฟล์</span> </a></li>
-    //         <li><a href="./../manage/index.html"><span class="ff-noto">การจัดการข้อมูล</span></a></li>
-    //     </ul>
-    // </li>`
-    // document.getElementById("login").innerHTML += (`<a href="#" onclick="gotoLogout()"><i class="bx bx-log-out"></i><span class="ff-noto">ออกจากระบบ</span></a>`)
+
+    axios.post('./../api/getdetail.php', { paper_id }).then(r => {
+        // console.log(r.data.data);
+        // r.data.map(i => console.log(i))
+        document.getElementById("thesis_title").innerHTML = r.data.data[0].thesis_title;
+        document.getElementById("std_name").innerHTML = r.data.data[0].std_name;
+    })
 
 } else {
-    // document.getElementById("login").innerHTML += `<a href="#" onclick="gotoLogin()"><i class="bx bx-exit"></i><span class="ff-noto">เข้าสู่ระบบ</span></a>`;
     gotoLogin();
-    console.log("not login");
-
 }
-
 
 $("#download").click(function () {
     $("#download_data").show();
@@ -97,8 +105,14 @@ function showButton() {
     // console.log(chk.checked)
     document.getElementById("btndownload").innerHTML = ""
     if (chk.checked == true) {
-        document.getElementById("btndownload").innerHTML = `<button type="button" class="button primary Sarabun">ดาวน์โหลด</button>`
+        document.getElementById("btndownload").innerHTML = `<button type="button" class="button primary Sarabun" onclick="downloadFile(${paper_id})">ดาวน์โหลด</button>`
     } else {
         document.getElementById("btndownload").innerHTML = `<button type="button" class="button primary Sarabun" disabled>ดาวน์โหลด</button>`
     }
 }
+
+function downloadFile(fname) {
+    window.location = `./../file/${fname}.zip`;
+    updateHistory();
+}
+
