@@ -85,10 +85,7 @@ var myChart = echarts.init(dom, null, {
 });
 
 var chartOption = {
-    xAxis: {
-        type: 'category',
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-    },
+    xAxis: {},
     yAxis: {
         type: 'value'
     },
@@ -97,10 +94,14 @@ var chartOption = {
 
 window.addEventListener('resize', myChart.resize);
 
-let showChart = () => {
+let showChart = (cat, dat) => {
+    chartOption.xAxis = {
+        type: 'category',
+        data: cat
+    }
     chartOption.series = [
         {
-            data: [120, 200, 150, 80, 70, 110, 130],
+            data: dat,
             type: 'bar',
             showBackground: true,
             backgroundStyle: {
@@ -118,8 +119,10 @@ let getHistory = () => {
         geo_cmuitaccount
     }
     axios.post('./../api/get_history.php', data).then(r => {
-        console.log(r);
-        showChart()
+        let dat = r.data.data.map(i => Number(i.count));
+        let cat = r.data.data.map(i => i.dt)
+        // console.log(cat, dat);
+        showChart(cat, dat)
     })
 }
 

@@ -2,7 +2,8 @@
     function getDetail($code){
         include("./connect.php");
         $products_arr["data"]=array();
-        $strSQL = "SELECT * FROM download_his WHERE cmuitaccount='$code'";
+        $strSQL = "SELECT count(id) as count, date(dt) as dt FROM download_his WHERE cmuitaccount='$code' GROUP BY date(dt) 
+        ORDER BY date(dt)";
         // print($strSQL);
         $objQuery = mysqli_query($objCon, $strSQL);
         while($row = mysqli_fetch_array($objQuery, MYSQLI_ASSOC)){
