@@ -63,16 +63,19 @@ let gotoIndex = () => {
     location.href = "./../index.html";
 }
 
-let downloadFile = (fname) => {
-    window.location = `./../file/${fname}.zip`;
+let downloadFile = (file_name) => {
+
+    window.location = `./../files/${file_name}`;
     updateHistory();
 }
 
 let showButton = () => {
     var chk = document.querySelector('#chk');
-    document.getElementById("btndownload").innerHTML = ""
+    let file_name = document.getElementById("file_name").innerText;
+    console.log(file_name);
+    document.getElementById("btndownload").innerHTML = "";
     if (chk.checked == true) {
-        document.getElementById("btndownload").innerHTML = `<button type="button" class="button primary Sarabun" onclick="downloadFile(${paper_id})">ดาวน์โหลด</button>`
+        document.getElementById("btndownload").innerHTML = `<button type="button" class="button primary Sarabun" onclick="downloadFile('${file_name}')">ดาวน์โหลด</button>`
     } else {
         document.getElementById("btndownload").innerHTML = `<button type="button" class="button primary Sarabun" disabled>ดาวน์โหลด</button>`
     }
@@ -126,12 +129,11 @@ let getHistory = () => {
 }
 
 if (geo_cmuitaccount) {
-    document.getElementById("filename").innerHTML = paper_id
     if (paper_id !== 'null') {
         axios.post('./../api/get_detail.php', { paper_id }).then(r => {
-            console.log(r);
             document.getElementById("thesis_title").innerHTML = r.data.data[0].thesis_title;
             document.getElementById("std_name").innerHTML = r.data.data[0].std_name;
+            document.getElementById("file_name").innerHTML = r.data.data[0].file_name;
         })
         getHistory();
     } else {
