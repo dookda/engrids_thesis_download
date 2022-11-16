@@ -129,6 +129,7 @@ let getHistory = () => {
 if (geo_cmuitaccount) {
     document.getElementById("filename").innerHTML = paper_id
     axios.post('./../api/get_detail.php', { paper_id }).then(r => {
+        console.log(r);
         document.getElementById("thesis_title").innerHTML = r.data.data[0].thesis_title;
         document.getElementById("std_name").innerHTML = r.data.data[0].std_name;
     })

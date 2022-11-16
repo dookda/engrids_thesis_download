@@ -81,5 +81,4 @@
         }
         curl_close($curl);
     }
-
 ?>
