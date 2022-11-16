@@ -120,20 +120,23 @@ let getHistory = () => {
     }
     axios.post('./../api/get_history.php', data).then(r => {
         let dat = r.data.data.map(i => Number(i.count));
-        let cat = r.data.data.map(i => i.dt)
-        // console.log(cat, dat);
-        showChart(cat, dat)
+        let cat = r.data.data.map(i => i.dt);
+        showChart(cat, dat);
     })
 }
 
 if (geo_cmuitaccount) {
     document.getElementById("filename").innerHTML = paper_id
-    axios.post('./../api/get_detail.php', { paper_id }).then(r => {
-        console.log(r);
-        document.getElementById("thesis_title").innerHTML = r.data.data[0].thesis_title;
-        document.getElementById("std_name").innerHTML = r.data.data[0].std_name;
-    })
-    getHistory()
+    if (paper_id !== 'null') {
+        axios.post('./../api/get_detail.php', { paper_id }).then(r => {
+            console.log(r);
+            document.getElementById("thesis_title").innerHTML = r.data.data[0].thesis_title;
+            document.getElementById("std_name").innerHTML = r.data.data[0].std_name;
+        })
+        getHistory();
+    } else {
+        gotoIndex();
+    }
 } else {
     gotoLogin();
 }
