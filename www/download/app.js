@@ -129,7 +129,8 @@ let getHistory = () => {
 }
 
 if (geo_cmuitaccount) {
-    if (paper_id !== 'null') {
+    if (paper_id !== 'null' && paper_id !== null) {
+        console.log(paper_id);
         axios.post('./../api/get_detail.php', { paper_id }).then(r => {
             document.getElementById("thesis_title").innerHTML = r.data.data[0].thesis_title;
             document.getElementById("std_name").innerHTML = r.data.data[0].std_name;
