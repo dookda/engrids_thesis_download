@@ -2845,6 +2845,7 @@ header.major h2:after {
 table {
 	margin: 0 0 2em 0;
 	width: 100%;
+	font-size: 20px;
 }
 
 table tbody tr {
