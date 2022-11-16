@@ -34,7 +34,7 @@ let updateHistory = (thesis_id) => {
         paper_id
     }
     // console.log(data);
-    axios.post('./../api/updatehistory.php', data).then(r => console.log(r))
+    axios.post('./../api/set_history.php', data).then(r => console.log(r))
 }
 
 let refreshPage = () => {
@@ -63,19 +63,78 @@ let gotoIndex = () => {
     location.href = "./../index.html";
 }
 
+let downloadFile = (fname) => {
+    window.location = `./../file/${fname}.zip`;
+    updateHistory();
+}
+
+let showButton = () => {
+    var chk = document.querySelector('#chk');
+    document.getElementById("btndownload").innerHTML = ""
+    if (chk.checked == true) {
+        document.getElementById("btndownload").innerHTML = `<button type="button" class="button primary Sarabun" onclick="downloadFile(${paper_id})">ดาวน์โหลด</button>`
+    } else {
+        document.getElementById("btndownload").innerHTML = `<button type="button" class="button primary Sarabun" disabled>ดาวน์โหลด</button>`
+    }
+}
+
+var dom = document.getElementById('chart-container');
+var myChart = echarts.init(dom, null, {
+    renderer: 'canvas',
+    useDirtyRect: false
+});
+
+var chartOption = {
+    xAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: []
+};
+
+window.addEventListener('resize', myChart.resize);
+
+let showChart = () => {
+    chartOption.series = [
+        {
+            data: [120, 200, 150, 80, 70, 110, 130],
+            type: 'bar',
+            showBackground: true,
+            backgroundStyle: {
+                color: 'rgba(180, 180, 180, 0.2)'
+            }
+        }
+    ]
+    if (chartOption && typeof chartOption === 'object') {
+        myChart.setOption(chartOption);
+    }
+}
+
+let getHistory = () => {
+    let data = {
+        geo_cmuitaccount
+    }
+    axios.post('./../api/get_history.php', data).then(r => {
+        console.log(r);
+        showChart()
+    })
+}
+
 if (geo_cmuitaccount) {
     document.getElementById("filename").innerHTML = paper_id
-
-    axios.post('./../api/getdetail.php', { paper_id }).then(r => {
-        // console.log(r.data.data);
-        // r.data.map(i => console.log(i))
+    axios.post('./../api/get_detail.php', { paper_id }).then(r => {
         document.getElementById("thesis_title").innerHTML = r.data.data[0].thesis_title;
         document.getElementById("std_name").innerHTML = r.data.data[0].std_name;
     })
-
+    getHistory()
 } else {
     gotoLogin();
 }
+
+document.getElementById("btndownload").innerHTML = `<button type="button" class="button primary Sarabun" disabled>ดาวน์โหลด</button>`
 
 $("#download").click(function () {
     $("#download_data").show();
@@ -99,20 +158,4 @@ $("#history_data").hide()
 $("#warning_data").hide()
 
 
-document.getElementById("btndownload").innerHTML = `<button type="button" class="button primary Sarabun" disabled>ดาวน์โหลด</button>`
-function showButton() {
-    var chk = document.querySelector('#chk');
-    // console.log(chk.checked)
-    document.getElementById("btndownload").innerHTML = ""
-    if (chk.checked == true) {
-        document.getElementById("btndownload").innerHTML = `<button type="button" class="button primary Sarabun" onclick="downloadFile(${paper_id})">ดาวน์โหลด</button>`
-    } else {
-        document.getElementById("btndownload").innerHTML = `<button type="button" class="button primary Sarabun" disabled>ดาวน์โหลด</button>`
-    }
-}
-
-function downloadFile(fname) {
-    window.location = `./../file/${fname}.zip`;
-    updateHistory();
-}
 

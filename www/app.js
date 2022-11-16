@@ -6,7 +6,7 @@ let loadTable = () => {
     let dtable = $('#table').DataTable({
         ajax: {
             type: "GET",
-            url: './api/getthesis.php',
+            url: './api/get_thesis.php',
             // data: { drowning_ampcode: drowning_ampcode },
             dataSrc: 'data'
         },

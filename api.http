@@ -1,7 +1,7 @@
-GET http://localhost/api/getthesis.php
+GET http://localhost/api/get_thesis.php
 
 ###
-POST http://localhost/api/getdetail.php
+POST http://localhost/api/get_detail.php
 content-type: application/json
 
 {
@@ -9,7 +9,7 @@ content-type: application/json
 }
 
 ###
-POST http://localhost/api/updatehistory.php
+POST http://localhost/api/set_history.php
 content-type: application/json
 
 {
@@ -19,4 +19,12 @@ content-type: application/json
     "geo_lastname_TH": "หอมหวล",
     "geo_organization_name_TH": "คณะสังคมศาสตร์",
     "paper_id": "3604003"
+}
+
+###
+POST http://localhost/api/get_history.php
+content-type: application/json
+
+{
+    "geo_cmuitaccount": "sakda.homhuan@cmu.ac.th"
 }
