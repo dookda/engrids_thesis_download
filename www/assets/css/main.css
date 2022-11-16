@@ -2120,7 +2120,7 @@ form {
 
 label {
 	display: block;
-	font-size: 0.9em;
+	font-size: 18px;
 	font-weight: 400;
 	margin: 0 0 1em 0;
 }
@@ -2845,6 +2845,7 @@ header.major h2:after {
 table {
 	margin: 0 0 2em 0;
 	width: 100%;
+	font-size: 18px;
 }
 
 table tbody tr {
@@ -2858,7 +2859,7 @@ table td {
 }
 
 table th {
-	font-size: 0.9em;
+	font-size: 16px;
 	font-weight: 400;
 	padding: 0 0.75em 0.75em 0.75em;
 	text-align: left;
@@ -3357,9 +3358,10 @@ body.is-preload #header.alt .logo {
 	width: 64em;
 	max-width: calc(100% - 4em);
 	padding: 1em;
-	background-color: #f7f7f7;
-	border-top-left-radius: 0.25em;
-	border-top-right-radius: 0.25em;
+	/* background-color: #f7f7f7; */
+	/* border-top-left-radius: 0.25em;
+	border-top-right-radius: 0.25em; */
+	border-radius: 10px;
 	cursor: default;
 	text-align: center;
 }
@@ -3442,7 +3444,8 @@ body.is-preload #header.alt .logo {
 
 #nav ul li a.active {
 	background-color: #ffffff;
-	box-shadow: none;
+	box-shadow: 8px 8px 12px 0 rgba(187, 187, 187, 0.2);
+	color: #e37682;
 }
 
 #nav.alt {
@@ -3842,9 +3845,9 @@ body.is-preload #header.alt .logo {
 	-webkit-flex-wrap: wrap;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
-	padding: 5em 5em 3em 5em;
+	padding: 3em 2em 1em 2em;
 	width: calc(100% + 2em);
-	margin: 0 0 3em -2em;
+	margin: 0 0 10px -2em;
 }
 
 #footer>* {
@@ -3854,8 +3857,8 @@ body.is-preload #header.alt .logo {
 
 #footer .copyright {
 	width: 100%;
-	margin: 2.5em 0 2em 0;
-	font-size: 0.8em;
+	margin: 0 0 1em 0;
+	font-size: 16px;
 	text-align: center;
 }
 
