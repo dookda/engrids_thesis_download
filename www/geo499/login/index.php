@@ -18,7 +18,7 @@
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS => 'code='.$code.'&redirect_uri=http%3A%2F%2Flocalhost%2Flogin%2Findex.php&client_id=vfue5sa0rvFkqkxQyj3KEjjqhrVrphFQBd2Mf0Nz&client_secret=g07dxSNJN48n6WXk6d7RGWNgZ1UkuXJJGECQnf2B&grant_type=authorization_code',
+            CURLOPT_POSTFIELDS => 'code='.$code.'&redirect_uri=http://localhost/geo499/login/index.php&client_id=vfue5sa0rvFkqkxQyj3KEjjqhrVrphFQBd2Mf0Nz&client_secret=g07dxSNJN48n6WXk6d7RGWNgZ1UkuXJJGECQnf2B&grant_type=authorization_code',
             CURLOPT_HTTPHEADER => array(
                 'Content-Type: application/x-www-form-urlencoded'
             ),

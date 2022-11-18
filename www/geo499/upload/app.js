@@ -1,3 +1,5 @@
+// var urlgeo = "https://geo.soc.cmu.ac.th";
+var urlgeo = "http://localhost";
 var url_string = window.location;
 var url = new URL(url_string);
 var statusMsg = url.searchParams.get("statusMsg");
@@ -42,12 +44,12 @@ let refreshPage = () => {
 }
 
 let gotoLogin = () => {
-    let url = 'https://oauth.cmu.ac.th/v1/Authorize.aspx?response_type=code' +
+    let oatthurl = 'https://oauth.cmu.ac.th/v1/Authorize.aspx?response_type=code' +
         '&client_id=vfue5sa0rvFkqkxQyj3KEjjqhrVrphFQBd2Mf0Nz' +
-        '&redirect_uri=http://localhost/login/index.php' +
+        '&redirect_uri=' + urlgeo + '/geo499/login/index.php' +
         '&scope=cmuitaccount.basicinfo' +
         '&state=null'
-    window.location.href = url;
+    window.location.href = oatthurl;
 }
 
 let gotoLogout = () => {

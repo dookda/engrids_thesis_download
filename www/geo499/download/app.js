@@ -1,3 +1,5 @@
+// var urlgeo = "https://geo.soc.cmu.ac.th";
+var urlgeo = "http://localhost";
 var url_string = window.location;
 var url = new URL(url_string);
 var paper_id = url.searchParams.get("paper_id");
@@ -24,6 +26,8 @@ const geo_firstname_TH = getCookie("geo_firstname_TH");
 const geo_lastname_TH = getCookie("geo_lastname_TH");
 const geo_organization_name_TH = getCookie("geo_organization_name_TH");
 
+console.log(geo_cmuitaccount);
+
 let updateHistory = (thesis_id) => {
     let data = {
         geo_student_id,
@@ -42,12 +46,13 @@ let refreshPage = () => {
 }
 
 let gotoLogin = () => {
-    let url = 'https://oauth.cmu.ac.th/v1/Authorize.aspx?response_type=code' +
+    let oatthurl = 'https://oauth.cmu.ac.th/v1/Authorize.aspx?response_type=code' +
         '&client_id=vfue5sa0rvFkqkxQyj3KEjjqhrVrphFQBd2Mf0Nz' +
-        '&redirect_uri=http://localhost/login/index.php' +
+        '&redirect_uri=' + urlgeo + '/geo499/login/index.php' +
         '&scope=cmuitaccount.basicinfo' +
         '&state=' + paper_id
-    window.location.href = url;
+    console.log(oatthurl);
+    window.location.href = oatthurl;
 }
 
 let gotoLogout = () => {
@@ -65,7 +70,7 @@ let gotoIndex = () => {
 
 let downloadFile = (file_name) => {
 
-    window.location = `./../files/${file_name}`;
+    window.open(`./../files/${file_name}`, '_blank');
     updateHistory();
 }
 
