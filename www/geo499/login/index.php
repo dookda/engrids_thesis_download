@@ -1,12 +1,4 @@
 <?php
-    
-    if (isset($_GET) || empty($_GET)) {
-        $code = $_GET['code'];
-        getAccessToken($code);
-    }else{
-        echo "not allowed";
-    }
-
     function getAccessToken($code){
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -80,5 +72,12 @@
             echo "not allowed";
         }
         curl_close($curl);
+    }
+        
+    if (isset($_GET) || empty($_GET)) {
+        $code = $_GET['code'];
+        getAccessToken($code);
+    }else{
+        echo "not allowed";
     }
 ?>

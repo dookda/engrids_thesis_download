@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   mysql:
-    container_name: mysql
+    container_name: geo499_mysql
     image: mysql
     restart: always
     volumes:
@@ -16,7 +16,7 @@ services:
       - "3306:3306"
 
   apache-php:
-    container_name: apache-php
+    container_name: geo499_apache-php
     build: .
     depends_on:
       - mysql
@@ -27,6 +27,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
+    container_name: geo499_phpmyadmin
     ports:
       - '8080:80'
     restart: always
