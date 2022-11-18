@@ -17,12 +17,14 @@ body {
 .card-border {
     width: fit-content;
     max-width: 100%;
-    background-color: #ffffff;
+    background-color: #ffffff81;
     color: #e6e6e6;
-    border-radius: 15px;
+    border-radius: 20px;
     /* cursor: pointer; */
     box-shadow: 8px 8px 12px 0 rgba(187, 187, 187, 0.2);
+    text-align: center;
 }
+
 
 .btn-download {
     font-family: "Nunito", sans-serif;

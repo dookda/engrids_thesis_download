@@ -64,7 +64,7 @@
             // header('Location: ./../../download/index.html?paper_id='.$paper_id);
             // print($paper_id);
             if($paper_id != null){
-                header('Location: ./../../download/index.html?paper_id='.$paper_id);
+                header('Location: ./../download/index.html?paper_id='.$paper_id);
             }else{
                 header('Location: ./../index.html');
             }

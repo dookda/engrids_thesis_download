@@ -86,85 +86,84 @@ let showButton = () => {
     }
 }
 
-// var dom = document.getElementById('chart-container');
-// var myChart = echarts.init(dom, null, {
-//     renderer: 'canvas',
-//     useDirtyRect: false
-// });
+var dom = document.getElementById('chart-container');
+var myChart = echarts.init(dom, null, {
+    renderer: 'canvas',
+    useDirtyRect: false
+});
 
-// var chartOption = {
-//     xAxis: {},
-//     yAxis: {
-//         type: 'value'
-//     },
-//     series: []
-// };
+var chartOption = {
+    xAxis: {},
+    yAxis: {
+        type: 'value',
+        axisLabel: {
+            show: true,
+            fontFamily: "Sarabun",
+            fontSize: 14
+        }
+    },
+    series: []
+};
 
-// window.addEventListener('resize', myChart.resize);
+window.addEventListener('resize', myChart.resize);
 
-// let showChart = (cat, dat) => {
-//     chartOption.xAxis = {
-//         type: 'category',
-//         data: cat
-//     }
-//     chartOption.series = [
-//         {
-//             data: dat,
-//             type: 'bar',
-//             showBackground: true,
-//             backgroundStyle: {
-//                 color: 'rgba(180, 180, 180, 0.2)'
-//             }
-//         }
-//     ]
-//     if (chartOption && typeof chartOption === 'object') {
-//         myChart.setOption(chartOption);
-//     }
-// }
-
-// let getHistory = () => {
-//     let data = {
-//         geo_cmuitaccount
-//     }
-//     axios.post('./../api/get_history.php', data).then(r => {
-//         let dat = r.data.data.map(i => Number(i.count));
-//         let cat = r.data.data.map(i => i.dt);
-//         showChart(cat, dat);
-//     })
-// }
-
-if (geo_cmuitaccount) {
-    if (paper_id !== 'null' && paper_id !== null) {
-        console.log(paper_id);
-        axios.post('./../api/get_detail.php', { paper_id }).then(r => {
-            document.getElementById("thesis_title").innerHTML = r.data.data[0].thesis_title;
-            document.getElementById("std_name").innerHTML = r.data.data[0].std_name;
-            document.getElementById("file_name").innerHTML = r.data.data[0].file_name;
-        })
-        // getHistory();
-    } else {
-        gotoIndex();
+let showChart = (cat, dat) => {
+    chartOption.xAxis = {
+        type: 'category',
+        data: cat,
+        axisLabel: {
+            show: true,
+            fontFamily: "Sarabun",
+            fontSize: 14
+        }
     }
-} else {
-    gotoLogin();
+    chartOption.series = [
+        {
+            data: dat,
+            type: 'bar',
+            showBackground: true,
+            backgroundStyle: {
+                color: 'rgba(180, 180, 180, 0.2)'
+            },
+            color: [
+                '#1F4690',
+            ],
+
+        }
+    ]
+    if (chartOption && typeof chartOption === 'object') {
+        myChart.setOption(chartOption);
+    }
 }
 
+let getHistory = () => {
+    let data = {
+        geo_cmuitaccount
+    }
+    axios.post('./../api/get_history.php', data).then(r => {
+        let dat = r.data.data.map(i => Number(i.count));
+        let cat = r.data.data.map(i => i.dt);
+        showChart(cat, dat);
+    })
+}
 
-document.getElementById("btndownload").innerHTML = `<button type="button" class="button primary Sarabun" disabled>ดาวน์โหลด</button>`
+if (geo_cmuitaccount) {
+    // if (paper_id !== 'null' && paper_id !== null) {
+    //     console.log(paper_id);
+    //     axios.post('./../api/get_detail.php', { paper_id }).then(r => {
+    //         document.getElementById("thesis_title").innerHTML = r.data.data[0].thesis_title;
+    //         document.getElementById("std_name").innerHTML = r.data.data[0].std_name;
+    //         document.getElementById("file_name").innerHTML = r.data.data[0].file_name;
+    //     })
+    getHistory();
+    //     } else {
+    // gotoIndex();
+    //     }
+    // } else {
+    //     gotoLogin();
+}
 
-
-$("#download").click(function () {
-    $("#download_data").show();
-    // $("#history_data").hide();
-})
-// $("#history").click(function () {
-//     $("#download_data").hide();
-//     $("#history_data").show();
-// })
-
-$("#download_data").show()
-// $("#history_data").hide()
-
+// document.getElementById("btndownload").innerHTML = `<button type="button" class="button primary Sarabun" disabled>ดาวน์โหลด</button>`
 
 
 
