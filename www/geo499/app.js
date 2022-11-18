@@ -18,7 +18,7 @@ let loadTable = () => {
             {
                 data: null,
                 render: function (data, type, row, meta) {
-                    return `<button type="button" class="btn btn-outline-success Sarabun" onclick="download('${row.std_id}')"><i
+                    return `<button type="button" class="btn btn-outline-success Sarabun" onclick="download('${row.id}')"><i
                     class="bi bi-download"></i>&nbsp;Download</button>`
                 }
             }

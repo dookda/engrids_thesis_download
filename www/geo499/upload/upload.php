@@ -35,5 +35,5 @@
         $statusMsg = 'กรุณาเลือกไฟล์ PDF เพื่ออัพโหลด';
     }
     // echo $statusMsg;
-    header('Location: ./../../upload/index.html?statusMsg='.$statusMsg);
+    header('Location: ./../upload/index.html?statusMsg='.$statusMsg);
 ?>
