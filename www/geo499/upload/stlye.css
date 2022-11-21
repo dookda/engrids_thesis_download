@@ -46,6 +46,12 @@ body {
     text-decoration: none;
 }
 
+.btn {
+    font-weight: 300;
+    color: #ffffff;
+    cursor: pointer;
+}
+
 #chart-container {
     position: relative;
     height: 30vh;
