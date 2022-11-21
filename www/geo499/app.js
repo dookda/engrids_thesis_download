@@ -1,3 +1,31 @@
+
+let getCookie = (cname) => {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+const geo_student_id = getCookie("geo_student_id");
+const geo_cmuitaccount = getCookie("geo_cmuitaccount");
+const geo_firstname_TH = getCookie("geo_firstname_TH");
+const geo_lastname_TH = getCookie("geo_lastname_TH");
+const geo_organization_name_TH = getCookie("geo_organization_name_TH");
+// console.log(geo_cmuitaccount);
+
+if (geo_cmuitaccount) {
+    document.getElementById("profile").innerHTML += `<i class="bi bi-person-circle"></i> <span>${geo_firstname_TH}</span>`
+}
+
 let download = (std_id) => {
     location.href = "./download/index.html?paper_id=" + std_id;
 }
