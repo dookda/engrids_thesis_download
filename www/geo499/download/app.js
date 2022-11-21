@@ -26,9 +26,9 @@ const geo_firstname_TH = getCookie("geo_firstname_TH");
 const geo_lastname_TH = getCookie("geo_lastname_TH");
 const geo_organization_name_TH = getCookie("geo_organization_name_TH");
 
-console.log(geo_cmuitaccount);
+// console.log(geo_cmuitaccount);
 
-let updateHistory = (thesis_id) => {
+let updateHistory = () => {
     let data = {
         geo_student_id,
         geo_cmuitaccount,
@@ -51,7 +51,7 @@ let gotoLogin = () => {
         '&redirect_uri=' + urlgeo + '/geo499/login/index.php' +
         '&scope=cmuitaccount.basicinfo' +
         '&state=' + paper_id
-    console.log(oatthurl);
+    // console.log(oatthurl);
     window.location.href = oatthurl;
 }
 
@@ -69,7 +69,6 @@ let gotoIndex = () => {
 }
 
 let downloadFile = (file_name) => {
-
     window.open(`./../files/${file_name}`, '_blank');
     updateHistory();
 }
@@ -135,7 +134,7 @@ let showButton = () => {
 
 if (geo_cmuitaccount) {
     if (paper_id !== 'null' && paper_id !== null) {
-        console.log(paper_id);
+        // console.log(paper_id);
         axios.post('./../api/get_detail.php', { paper_id }).then(r => {
             document.getElementById("thesis_title").innerHTML = r.data.data[0].thesis_title;
             document.getElementById("std_name").innerHTML = r.data.data[0].std_name;

@@ -2,7 +2,7 @@
     function getDetail($code){
         include("./connect.php");
         $products_arr["data"]=array();
-        $strSQL = "SELECT * FROM thesis WHERE std_id='$code'";
+        $strSQL = "SELECT * FROM thesis WHERE id='$code'";
         // print($strSQL);
         $objQuery = mysqli_query($objCon, $strSQL);
         while($row = mysqli_fetch_array($objQuery, MYSQLI_ASSOC)){
