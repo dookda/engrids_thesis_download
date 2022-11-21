@@ -191,10 +191,10 @@ html {
 
 body {
 	background-color: #935d8c;
-	background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
-	background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
-	background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
-	background-image: url("images/overlay.png"), linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+	background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #f69989 15%, #e79864 85%);
+	background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #f69989 15%, #e79864 85%);
+	background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #f69989 15%, #e79864 85%);
+	background-image: url("images/overlay.png"), linear-gradient(45deg, #f69989 15%, #e79864 85%);
 }
 
 body.is-preload *,
@@ -221,7 +221,7 @@ body,
 input,
 select,
 textarea {
-	font-family: "Source Sans Pro", Helvetica, sans-serif;
+	font-family: "Sarabun", Helvetica, sans-serif;
 	font-size: 17pt;
 	font-weight: 300;
 	line-height: 1.65;
@@ -2007,7 +2007,7 @@ input[type="reset"].small,
 input[type="button"].small,
 button.small,
 .button.small {
-	font-size: 0.8em;
+	font-size: 0.7em;
 }
 
 input[type="submit"].large,
@@ -2173,7 +2173,8 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 select {
-	height: 2.75em;
+	height: 2.4em;
+	font-size: 20px;
 }
 
 textarea {
@@ -2498,6 +2499,7 @@ input[type="radio"]:focus+label:before {
 .image img {
 	border-radius: 8px;
 	display: block;
+	background-color: #ffffff81;
 }
 
 .image.left,
@@ -2846,6 +2848,23 @@ table {
 	margin: 0 0 2em 0;
 	width: 100%;
 	font-size: 18px;
+}
+
+.hoverTable {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+/* Define the hover highlight color for the table row */
+.hoverTable tr:hover {
+	background-color: rgba(235, 235, 235, 0.397);
+	/* font-weight: 400; */
+	color: #ffffff;
+	opacity: 1;
+}
+
+tr {
+	color: #ffffff;
 }
 
 table tbody tr {
@@ -3209,7 +3228,7 @@ table.alt tbody tr td {
 /* Header */
 
 #header {
-	padding: 5em 5em 1em 5em;
+	padding: 4em 4em 1em 3em;
 	text-align: center;
 }
 
@@ -3352,8 +3371,8 @@ body.is-preload #header.alt .logo {
 	-webkit-transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
 	-ms-transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
 	transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
-	background-color: #ffffff;
-	color: #636363;
+	background-color: #4d1803;
+	color: #f0f0f0;
 	position: absolute;
 	width: 64em;
 	max-width: calc(100% - 4em);
@@ -3373,7 +3392,7 @@ body.is-preload #header.alt .logo {
 }
 
 #nav a:hover {
-	color: #636363;
+	color: #f0f0f0;
 }
 
 #nav strong,
