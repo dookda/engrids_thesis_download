@@ -15,15 +15,15 @@ let getCookie = (cname) => {
     return "";
 }
 
-const geo_student_id = getCookie("geo_student_id");
+// const geo_student_id = getCookie("geo_student_id");
 const geo_cmuitaccount = getCookie("geo_cmuitaccount");
 const geo_firstname_TH = getCookie("geo_firstname_TH");
 const geo_lastname_TH = getCookie("geo_lastname_TH");
-const geo_organization_name_TH = getCookie("geo_organization_name_TH");
+// const geo_organization_name_TH = getCookie("geo_organization_name_TH");
 // console.log(geo_cmuitaccount);
 
 if (geo_cmuitaccount) {
-    document.getElementById("profile").innerHTML += `<i class="bi bi-person-circle"></i> <span>${geo_firstname_TH}</span>`
+    document.getElementById("profile").innerHTML += `<a class="btn" style="font-size: 20px;" ><i class="bi bi-person-circle"></i> <span>${geo_firstname_TH}</span></a>`
 }
 
 let download = (std_id) => {

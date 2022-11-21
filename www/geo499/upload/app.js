@@ -83,6 +83,7 @@ const closeModalUpdate = () => {
 }
 
 if (geo_cmuitaccount) {
+    document.getElementById("profile").innerHTML += `<a class="btn" style="font-size: 20px;" ><i class="bi bi-person-circle"></i> <span>${geo_firstname_TH}</span></a>`
     if (statusMsg == null) {
         document.getElementById("std_name").value = `${geo_firstname_TH} ${geo_lastname_TH}`;
         document.getElementById("std_id").value = `${geo_student_id}`;

@@ -155,6 +155,7 @@ if (geo_cmuitaccount) {
     //         document.getElementById("std_name").innerHTML = r.data.data[0].std_name;
     //         document.getElementById("file_name").innerHTML = r.data.data[0].file_name;
     //     })
+    document.getElementById("profile").innerHTML += `<a class="btn" style="font-size: 20px;" ><i class="bi bi-person-circle"></i> <span>${geo_firstname_TH}</span></a>`
     getHistory();
     //     } else {
     // gotoIndex();

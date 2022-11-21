@@ -135,6 +135,7 @@ let showButton = () => {
 if (geo_cmuitaccount) {
     if (paper_id !== 'null' && paper_id !== null) {
         // console.log(paper_id);
+        document.getElementById("profile").innerHTML += `<a class="btn" style="font-size: 20px;" ><i class="bi bi-person-circle"></i> <span>${geo_firstname_TH}</span></a>`
         axios.post('./../api/get_detail.php', { paper_id }).then(r => {
             document.getElementById("thesis_title").innerHTML = r.data.data[0].thesis_title;
             document.getElementById("std_name").innerHTML = r.data.data[0].std_name;
