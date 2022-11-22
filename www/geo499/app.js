@@ -46,7 +46,7 @@ let loadTable = () => {
             {
                 data: null,
                 render: function (data, type, row, meta) {
-                    return `<button type="button" class="btn btn-outline-success Sarabun" onclick="download('${row.id}')"><i
+                    return `<button type="button" class="button primary Sarabun Sarabun" onclick="download('${row.id}')"><i
                     class="bi bi-download"></i>&nbsp;Download</button>`
                 }
             }
@@ -87,3 +87,5 @@ for (var i = 0; i < btns.length; i++) {
         this.className += " active";
     });
 }
+
+
