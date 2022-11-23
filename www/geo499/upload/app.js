@@ -1,5 +1,5 @@
-// var urlgeo = "https://geo.soc.cmu.ac.th";
-var urlgeo = "http://localhost";
+var urlgeo = "https://geo.soc.cmu.ac.th";
+// var urlgeo = "http://localhost";
 var url_string = window.location;
 var url = new URL(url_string);
 var statusMsg = url.searchParams.get("statusMsg");
