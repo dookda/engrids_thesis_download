@@ -1,5 +1,5 @@
-// var urlgeo = "https://geo.soc.cmu.ac.th";
-var urlgeo = "http://localhost";
+var urlgeo = "https://geo.soc.cmu.ac.th";
+// var urlgeo = "http://localhost";
 var url_string = window.location;
 var url = new URL(url_string);
 var paper_id = url.searchParams.get("paper_id");
@@ -148,23 +148,10 @@ let getHistory = () => {
 }
 
 if (geo_cmuitaccount) {
-    // if (paper_id !== 'null' && paper_id !== null) {
-    //     console.log(paper_id);
-    //     axios.post('./../api/get_detail.php', { paper_id }).then(r => {
-    //         document.getElementById("thesis_title").innerHTML = r.data.data[0].thesis_title;
-    //         document.getElementById("std_name").innerHTML = r.data.data[0].std_name;
-    //         document.getElementById("file_name").innerHTML = r.data.data[0].file_name;
-    //     })
     document.getElementById("profile").innerHTML += `<a class="btn" style="font-size: 20px;" ><i class="bi bi-person-circle"></i> <span>${geo_firstname_TH}</span></a>`
     getHistory();
-    //     } else {
-    // gotoIndex();
-    //     }
-    // } else {
-    //     gotoLogin();
 }
 
-// document.getElementById("btndownload").innerHTML = `<button type="button" class="button primary Sarabun" disabled>ดาวน์โหลด</button>`
 
 
 

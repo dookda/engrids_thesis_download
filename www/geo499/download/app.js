@@ -1,5 +1,5 @@
-// var urlgeo = "https://geo.soc.cmu.ac.th";
-var urlgeo = "http://localhost";
+var urlgeo = "https://geo.soc.cmu.ac.th";
+// var urlgeo = "http://localhost";
 var url_string = window.location;
 var url = new URL(url_string);
 var paper_id = url.searchParams.get("paper_id");
@@ -85,53 +85,6 @@ let showButton = () => {
     }
 }
 
-// var dom = document.getElementById('chart-container');
-// var myChart = echarts.init(dom, null, {
-//     renderer: 'canvas',
-//     useDirtyRect: false
-// });
-
-// var chartOption = {
-//     xAxis: {},
-//     yAxis: {
-//         type: 'value'
-//     },
-//     series: []
-// };
-
-// window.addEventListener('resize', myChart.resize);
-
-// let showChart = (cat, dat) => {
-//     chartOption.xAxis = {
-//         type: 'category',
-//         data: cat
-//     }
-//     chartOption.series = [
-//         {
-//             data: dat,
-//             type: 'bar',
-//             showBackground: true,
-//             backgroundStyle: {
-//                 color: 'rgba(180, 180, 180, 0.2)'
-//             }
-//         }
-//     ]
-//     if (chartOption && typeof chartOption === 'object') {
-//         myChart.setOption(chartOption);
-//     }
-// }
-
-// let getHistory = () => {
-//     let data = {
-//         geo_cmuitaccount
-//     }
-//     axios.post('./../api/get_history.php', data).then(r => {
-//         let dat = r.data.data.map(i => Number(i.count));
-//         let cat = r.data.data.map(i => i.dt);
-//         showChart(cat, dat);
-//     })
-// }
-
 if (geo_cmuitaccount) {
     if (paper_id !== 'null' && paper_id !== null) {
         // console.log(paper_id);
@@ -155,15 +108,9 @@ document.getElementById("btndownload").innerHTML = `<button type="button" class=
 
 $("#download").click(function () {
     $("#download_data").show();
-    // $("#history_data").hide();
 })
-// $("#history").click(function () {
-//     $("#download_data").hide();
-//     $("#history_data").show();
-// })
-
 $("#download_data").show()
-// $("#history_data").hide()
+
 
 
 
