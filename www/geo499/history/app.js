@@ -47,7 +47,7 @@ let refreshPage = () => {
 
 let gotoLogin = () => {
     let oatthurl = 'https://oauth.cmu.ac.th/v1/Authorize.aspx?response_type=code' +
-        '&client_id=vfue5sa0rvFkqkxQyj3KEjjqhrVrphFQBd2Mf0Nz' +
+        '&client_id=a1nEmhC5FcYnuQbq0EGH96bHqUsZrJfDepQGQj7n' +
         '&redirect_uri=' + urlgeo + '/geo499/login/index.php' +
         '&scope=cmuitaccount.basicinfo' +
         '&state=' + paper_id
