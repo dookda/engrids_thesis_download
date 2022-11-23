@@ -24,16 +24,20 @@
                 $thesis_title = $_POST['thesis_title'];
                 
                 insertThesis((int)$std_id,$std_name,$advisor,$thesis_title,$fileName);
+                $status = "อัพโหลดสำเร็จ";
                 $statusMsg = "อัพโหลดไฟล์ ".$fileName. " สำเร็จ";
             }else{
-                $statusMsg = "เกิดข้อผิดพลาด กรุณาอัพโหลดอีกครั้ง";
+                $status = "อัพโหลดไม่สำเร็จ";
+                $statusMsg = "เกิดข้อผิดพลาด กรุณาอัพโหลดไฟล์ขนาดไม่เกิน 8 Mb อีกครั้ง ";
             }
         }else{
+            $status = "อัพโหลดไม่สำเร็จ";
             $statusMsg = 'กรุณาอัพโหลดไฟล์ PDF เท่านั้น';
         }
     }else{
+        $status = "อัพโหลดไม่สำเร็จ";
         $statusMsg = 'กรุณาเลือกไฟล์ PDF เพื่ออัพโหลด';
     }
     // echo $statusMsg;
-    header('Location: ./../upload/index.html?statusMsg='.$statusMsg);
+    header('Location: ./../upload/index.html?statusMsg='.$statusMsg.'&status='.$status);
 ?>

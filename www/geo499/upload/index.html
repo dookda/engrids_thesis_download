@@ -43,8 +43,9 @@
                 <span class=""><img src="./../assets/img/logogeo.png" alt="" width="120px" /></span>
                 <!-- <span class=""><img src="./assets/img/logoengrids .png" alt="" width="90px" /></span> -->
             </div>
-            <h2>ข้อมูลการค้นคว้าวิจัยอิสระของนักศึกษา</h2>
-            <p>ดาวน์โหลดข้อมูลการค้นคว้าวิจัยอิสระของนักศึกษา ภาควิชาภูมิศาสตร์ มหาวิทยาลัยเชียงใหม่<br />
+            <h2 style="color: #000000; font-weight: 400;">ข้อมูลการค้นคว้าวิจัยอิสระของนักศึกษา</h2>
+            <p style="color: #000000;">ดาวน์โหลดข้อมูลการค้นคว้าวิจัยอิสระของนักศึกษา ภาควิชาภูมิศาสตร์
+                มหาวิทยาลัยเชียงใหม่<br />
             </p>
         </header>
         <!-- Nav -->
@@ -55,10 +56,10 @@
                         รายงานการค้นคว้าวิจัยอิสระ</a></li>
                 <li><a id="upload" class="active" style="font-size: 20px;" href="./index.html"><i
                             class="bi bi-upload"></i>
-                        อัพโหลดรายงาน</a></li>
+                        อัพโหลด</a></li>
                 <li><a id="history" class="" style="font-size: 20px;" href="./../history/index.html"><i
                             class="bi bi-clock-history"></i>
-                        ประวัติการดาวน์โหลด</a></li>
+                        ประวัติ</a></li>
                 <li><a id="home" class="" style="font-size: 20px;" href="https://geo.soc.cmu.ac.th/"><i
                             class="bi bi-house-door"></i>
                         กลับสู่หน้าหลัก</a></li>
@@ -68,7 +69,7 @@
 
         <!-- Main -->
         <div class="" id="main">
-            <div id="download_data" class="main">
+            <div id="download_data" class="main border-card">
                 <div></div>
                 <div class="col-12">
                     <div class="" style="font-size: 23px; font-weight: 500;">อัปโหลดรายงานการค้นคว้าวิจัยอิสระ </div>
@@ -111,24 +112,33 @@
                 </div>
             </div>
         </div>
-
-        <!-- Footer -->
-        <footer id="footer">
-            <span class="copyright">&copy; Copyright © 2022 <a href="https://geo.soc.cmu.ac.th/#">ภาควิชาภูมิศาสตร์
-                    มหาวิทยาลัยเชียงใหม่</a>. All rights reserved. <br><span class="copyright"> Designed by <a
-                        href="https://engrids.soc.cmu.ac.th/">EnGRIDs. </a></span></span>
-        </footer>
+    </div>
+    <br>
+    <br>
+    <!-- Footer -->
+    <footer id="footer" style="background-color: black;">
+        <span class="copyright">&copy; Copyright © 2022 <a href="https://geo.soc.cmu.ac.th/#">ภาควิชาภูมิศาสตร์
+                มหาวิทยาลัยเชียงใหม่</a>. All rights reserved. <br><span class="copyright"> Designed by <a
+                    href="https://engrids.soc.cmu.ac.th/">EnGRIDs. </a></span></span>
+    </footer>
     </div>
 
-
-    <div class="modal fade" id="modalupdate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+    <!-- Modal -->
+    <div class="modal fade" id="modalupdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-body mt-5">
-                    <p><span id="popup" style="color: #000;"></span></p>
+                <div class="modal-header" id="popupstatus">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p><span id="popup"
+                            style="color: #000; font-size: 20px; font-weight: 400; text-align: center;"></span></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">ปิด</button>
                 </div>
             </div>
         </div>

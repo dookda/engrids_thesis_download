@@ -3,6 +3,7 @@ var urlgeo = "http://localhost";
 var url_string = window.location;
 var url = new URL(url_string);
 var statusMsg = url.searchParams.get("statusMsg");
+var status = url.searchParams.get("status");
 
 let getCookie = (cname) => {
     let name = cname + "=";
@@ -83,15 +84,28 @@ const closeModalUpdate = () => {
 }
 
 if (geo_cmuitaccount) {
-    document.getElementById("profile").innerHTML += `<a class="btn" style="font-size: 20px;" ><i class="bi bi-person-circle"></i> <span>${geo_firstname_TH}</span></a>`
+    document.getElementById("profile").innerHTML += `<a class="btn" style="font-size: 20px;" "color: #ffffff" ><i class="bi bi-person-circle"></i> <span>${geo_firstname_TH}</span></a>`
     if (statusMsg == null) {
         document.getElementById("std_name").value = `${geo_firstname_TH} ${geo_lastname_TH}`;
         document.getElementById("std_id").value = `${geo_student_id}`;
     } else {
         document.getElementById("std_name").value = `${geo_firstname_TH} ${geo_lastname_TH}`;
         document.getElementById("std_id").value = `${geo_student_id}`;
-        document.getElementById("popup").innerHTML = statusMsg;
-        modalUpdate.show();
+
+        if (status == 'อัพโหลดสำเร็จ') {
+            document.getElementById("popup").innerHTML = statusMsg;
+            document.getElementById("popupstatus").innerHTML = `<h5 class="modal-title"><i class="bi bi-check-circle-fill"
+            style="color: rgb(67, 184, 0); font-size: 24px;"></i>&nbsp;&nbsp;<span style="color: rgb(67, 184, 0); font-size: 24px; font-weight: 400;">${status}</span>
+    </h5>;`
+
+            modalUpdate.show();
+        } else if (status == 'อัพโหลดไม่สำเร็จ') {
+            document.getElementById("popup").innerHTML = statusMsg;
+            document.getElementById("popupstatus").innerHTML = `<h5 class="modal-title"><i class="bi bi-x-circle-fill"
+                    style="color: rgb(231, 0, 0); font-size: 24px;"></i>&nbsp;&nbsp;<span style="color: rgb(231, 0, 0); font-size: 24px; font-weight: 400;">${status}</span>
+            </h5>;`
+            modalUpdate.show();
+        }
     }
 
 } else {

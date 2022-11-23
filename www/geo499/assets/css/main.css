@@ -189,13 +189,13 @@ html {
 	box-sizing: inherit;
 }
 
-body {
-	background-color: #935d8c;
+/* body {
+	background-color: #ffffff;
 	background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #f69989 15%, #e79864 85%);
 	background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #f69989 15%, #e79864 85%);
 	background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #f69989 15%, #e79864 85%);
 	background-image: url("images/overlay.png"), linear-gradient(45deg, #f69989 15%, #e79864 85%);
-}
+} */
 
 body.is-preload *,
 body.is-preload *:before,
@@ -213,7 +213,7 @@ body.is-preload *:after {
 /* Type */
 
 body {
-	background-color: #935d8c;
+	background-color: rgba(255, 255, 255, 0.65);
 	color: rgba(255, 255, 255, 0.65);
 }
 
@@ -2267,7 +2267,7 @@ input[type="radio"]+label:before {
 }
 
 label {
-	color: #ffffff;
+	color: #4b0f0f;
 }
 
 input[type="text"],
@@ -2856,15 +2856,18 @@ table {
 }
 
 /* Define the hover highlight color for the table row */
-.hoverTable tr:hover {
-	background-color: rgba(235, 235, 235, 0.397);
-	/* font-weight: 400; */
-	color: #ffffff;
+/* .hoverTable tr:hover {
+	background-color: rgba(252, 237, 218, 0.397);
+	font-weight: 400;
+	color: #5e0909;
 	opacity: 1;
-}
+
+} */
 
 tr {
-	color: #ffffff;
+	color: #3b0202;
+	font-weight: 400;
+
 }
 
 table tbody tr {
@@ -2879,13 +2882,19 @@ table td {
 
 table th {
 	font-size: 16px;
-	font-weight: 400;
+	font-weight: 600;
 	padding: 0 0.75em 0.75em 0.75em;
-	text-align: left;
+	text-align: center;
+	color: #771919;
+	/* background-color: #c5c5c560; */
+	background-color: rgba(230, 230, 230, 0.384);
 }
+
 
 table thead {
 	border-bottom: solid 2px;
+
+
 }
 
 table tfoot {
@@ -2894,6 +2903,7 @@ table tfoot {
 
 table.alt {
 	border-collapse: separate;
+
 }
 
 table.alt tbody tr td {
@@ -2926,9 +2936,6 @@ table tbody tr:nth-child(2n + 1) {
 	background-color: rgba(255, 255, 255, 0.075);
 }
 
-table th {
-	color: #ffffff;
-}
 
 table thead {
 	border-bottom-color: rgba(255, 255, 255, 0.35);
@@ -3032,7 +3039,7 @@ table.alt tbody tr td {
 	-ms-flex: 1;
 	flex: 1;
 	padding: 1.5em;
-	color: #ffffff;
+	color: #2e1010;
 	text-align: center;
 }
 
@@ -3228,7 +3235,7 @@ table.alt tbody tr td {
 /* Header */
 
 #header {
-	padding: 4em 4em 1em 3em;
+	padding: 1em 1em 0em 0em;
 	text-align: center;
 }
 
@@ -3464,7 +3471,7 @@ body.is-preload #header.alt .logo {
 #nav ul li a.active {
 	background-color: #ffffff;
 	box-shadow: 8px 8px 12px 0 rgba(187, 187, 187, 0.2);
-	color: #e37682;
+	color: #be293a;
 }
 
 #nav.alt {
