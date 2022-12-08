@@ -112,6 +112,45 @@ if (geo_cmuitaccount) {
     gotoLogin();
 }
 
+$('.mobile-nav-toggle').on('click', function (e) {
+    var content;
+    content = `
+        <div class="d-flex flex-column " id="memu_mobile">
+        <div class="btn-memu" onclick="gotoIndex()"><i class="bi bi-journal-text"></i> <span>รายงานการค้นคว้าวิจัยอิสระ</span></div> <br>
+        <div class="btn-memu" onclick="gotoupload()"><i class="bi bi-upload"></i> <span>อัพโหลด</span></div><br>
+        <div class="btn-memu" onclick="gotohistory()"><i class="bi bi-clock-history"></i><span>ประวัติ</span></div><br>
+        <div class="btn-memu" onclick="gotomain()"><i class="bi bi-house-door"></i> <span>หน้าหลัก</span> </div> <br>
+      </div>`
+    Swal.fire({
+        title: "<h5 style='color:#68553f'>" + 'เมนู' + "</h5>",
+        // icon: 'info',
+        html: content + '',
+        confirmButtonText: 'ปิด',
+        confirmButtonColor: '#000000',
+        background: '#FDEBD0',
+        customClass: {
+            container: 'Sarabun',
+            title: 'Sarabun',
+        },
+        showConfirmButton: false,
+        // showCloseButton: false,
+        // showCancelButton: true,
+
+
+    })
+})
+
+
+let gotoupload = () => {
+    location.href = "./index.html";
+}
+let gotohistory = () => {
+    location.href = "./../history/index.html";
+}
+let gotomain = () => {
+    location.href = "https://geo.soc.cmu.ac.th/";
+}
+
 
 
 

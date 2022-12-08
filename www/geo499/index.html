@@ -34,8 +34,8 @@
 
     <!-- Wrapper -->
     <div id="wrapper">
+        <div class="mobile-nav-toggle mt-10"><i class="bi bi-list" style="color: #000;"></i></div>
         <!-- Header -->
-
         <header id="header">
             <div class="">
                 <span class=""><img src="./assets/img/logogeo.png" alt="" width="120px" /></span>
@@ -48,11 +48,11 @@
             </div>
         </header>
         <!-- Nav -->
-        <nav id="nav">
+        <nav id="nav" class="nav">
             <ul>
                 <li><a id="dashboad" class="btn active" style="font-size: 20px;" href="./index.html"><i
                             class="bi bi-journal-text"></i>
-                        รายงานการค้นคว้าวอิสระ</a></li>
+                        รายงานการค้นคว้าวิจัยอิสระ</a></li>
                 <li><a id="upload" class="btn" style="font-size: 20px;" href="./upload/index.html"><i
                             class="bi bi-upload"></i>
                         อัพโหลด</a></li>
@@ -64,11 +64,13 @@
                         หน้าหลัก</a></li>
                 <li id="profile"></li>
             </ul>
+
         </nav>
+        <br>
         <!-- Main -->
         <div class="border-card">
             <div class="" id="main">
-                <div class="container mt-120 mb-5">
+                <div class="container mt-10 ">
                     <div class="card">
                         <div class="card-body" style="font-size: 20px;">
                             <table id="table" class="hoverTable" style="width:100%">
@@ -91,15 +93,17 @@
     <br>
     <br>
     <!-- Footer -->
-    <footer id="footer" style="background-color: black;">
+    <footer id="footer" style="background-color: #444444;">
         <span class="copyright">&copy; Copyright © 2022 <a href="https://geo.soc.cmu.ac.th/#">ภาควิชาภูมิศาสตร์
                 มหาวิทยาลัยเชียงใหม่</a>. All rights reserved. <br><span class="copyright"> Designed by <a
                     href="https://engrids.soc.cmu.ac.th/">EnGRIDs. </a></span></span>
     </footer>
     </div>
 
-    <!-- JavaScript Bundle with Popper -->
+    <!-- sweetalert2 -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <!-- JavaScript Bundle with Popper -->
     <script src="./assets/js/jquery.min.js"></script>
     <script src="./assets/js/jquery.scrollex.min.js"></script>
     <script src="./assets/js/jquery.scrolly.min.js"></script>
@@ -113,6 +117,7 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+
     <script src="./app.js"></script>
 
 </html>
