@@ -91,13 +91,25 @@ for (var i = 0; i < btns.length; i++) {
 
 $('.mobile-nav-toggle').on('click', function (e) {
     var content;
-    content = `
+    var content;
+    if (geo_cmuitaccount) {
+        content = `
+        <div class="d-flex flex-column " id="memu_mobile">
+        <div class="btn-memu" onclick="gotoIndex()"><i class="bi bi-journal-text"></i> <span>รายงานการค้นคว้าวิจัยอิสระ</span></div> <br>
+        <div class="btn-memu" onclick="gotoupload()"><i class="bi bi-upload"></i> <span>อัพโหลด</span></div><br>
+        <div class="btn-memu" onclick="gotohistory()"><i class="bi bi-clock-history"></i><span>ประวัติ</span></div><br>
+        <div class="btn-memu" onclick="gotomain()"><i class="bi bi-house-door"></i> <span>หน้าหลัก</span> </div> <br>
+        <div class="btn-memu" id="profile" ><i class="bi bi-person-circle"></i><span> ${geo_firstname_TH}</span> </div><br>
+      </div>`
+    } else {
+        content = `
         <div class="d-flex flex-column " id="memu_mobile">
         <div class="btn-memu" onclick="gotoIndex()"><i class="bi bi-journal-text"></i> <span>รายงานการค้นคว้าวิจัยอิสระ</span></div> <br>
         <div class="btn-memu" onclick="gotoupload()"><i class="bi bi-upload"></i> <span>อัพโหลด</span></div><br>
         <div class="btn-memu" onclick="gotohistory()"><i class="bi bi-clock-history"></i><span>ประวัติ</span></div><br>
         <div class="btn-memu" onclick="gotomain()"><i class="bi bi-house-door"></i> <span>หน้าหลัก</span> </div> <br>
       </div>`
+    }
     Swal.fire({
         title: "<h5 style='color:#68553f'>" + 'เมนู' + "</h5>",
         // icon: 'info',
